@@ -166,7 +166,8 @@ def team_colors(team_name)
 end
 
 def team_names
-  game_hash.find_all |i|
+  stats = game_hash.
+  stats.find_all |i|
     i[:team_names]
   end
 end
