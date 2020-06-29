@@ -182,12 +182,14 @@ def player_numbers(team)
   result
 end
 
-def player_stats(team)
+def player_stats(player)
   result = {}
   game_hash.each do |key1, value1|
-    if game_hash[key1][:team_name] == team
-      game_hash[key1][:players].length.times do |index|
-        result.push(game_hash[key1][:players][index][:number])
+    game_hash[key1][:players].length.times do |index|
+      if game_hash[key1][:players][index][:player_name] == player
+        game_hash[key1][:players][index].each do |key2,value2|
+          result[key2] = value2
+        end
       end
     end
   end
