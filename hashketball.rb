@@ -129,10 +129,11 @@ end
 # Write code here
 
 def num_points_scored(player_name)
-  game_hash.each do |key1, value1|
-    game_hash[key1].each do |key2, value2|
-      if game_hash[key1][player_name] == player_name
-        game_hash[key1][score]
+  stats = game_hash
+  stats.each do |key1, value1|
+    stats[key1].each do |key2, value2|
+      if stats[key1][player_name] == player_name
+        stats[key1][score]
       end
   end
 end
