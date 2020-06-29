@@ -129,12 +129,11 @@ end
 # Write code here
 
 def num_points_scored(target)
-  stats = game_hash
   result = nil
-  stats.each do |key1, value1|
-    stats[key1][:players].length.times do |index|
-      if stats[key1][:players][index][:player_name] == target
-        result = stats[key1][:players][index][:points]
+  game_hash.each do |key1, value1|
+    game_hash[key1][:players].length.times do |index|
+      if game_hash[key1][:players][index][:player_name] == target
+        result = game_hash[key1][:players][index][:points]
       end
     end
   end
@@ -142,12 +141,11 @@ def num_points_scored(target)
 end
 
 def shoe_size(target)
-  stats = game_hash
   result = nil
-  stats.each do |key1, value1|
-    stats[key1][:players].length.times do |index|
-      if stats[key1][:players][index][:player_name] == target
-        result = stats[key1][:players][index][:shoe]
+  game_hash.each do |key1, value1|
+  game_hash[key1][:players].length.times do |index|
+      if game_hash[key1][:players][index][:player_name] == target
+        result = game_hash[key1][:players][index][:shoe]
       end
     end
   end
@@ -155,11 +153,10 @@ def shoe_size(target)
 end
 
 def team_colors(team_name)
-  stats = game_hash
   result = nil
-  stats.each do |key1, value1|
-    if stats[key1][:team_name] == team_name
-      result = stats[key1][:colors]
+  game_hash.each do |key1, value1|
+    if game_hash[key1][:team_name] == team_name
+      result = game_hash[key1][:colors]
     end
   end
   result
@@ -174,8 +171,20 @@ def team_names
 end
 
 def player_numbers(team)
-  stats = game_hash
   result = []
+  game_hash.each do |key1, value1|
+    if game_hash[key1][:team_name] == team
+      game_hash[key1][:players].length.times do |index|
+        result.push(game_hash[key1][:players][index][:number])
+      end
+    end
+  end
+  result
+end
+
+def player_stats(team)
+  stats = game_hash
+  result = {}
   stats.each do |key1, value1|
     if stats[key1][:team_name] == team
       stats[key1][:players].length.times do |index|
