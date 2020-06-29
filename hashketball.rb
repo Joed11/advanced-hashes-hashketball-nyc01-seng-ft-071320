@@ -137,5 +137,6 @@ def num_points_scored(player_name)
       if stats[key1][player_name] == player_name
         stats[key1][score]
       end
+    end
   end
 end
