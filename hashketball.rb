@@ -167,7 +167,7 @@ end
 
 def team_names
   stats = game_hash.
-  stats.find_all |i|
+  stats.find_all do |i|
     i[:team_names]
   end
 end
