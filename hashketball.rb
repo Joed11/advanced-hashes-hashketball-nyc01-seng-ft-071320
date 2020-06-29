@@ -166,5 +166,7 @@ def team_colors(team_name)
 end
 
 def team_names
-
+  game_hash.find_all |i|
+    i[:team_names]
+  end
 end
