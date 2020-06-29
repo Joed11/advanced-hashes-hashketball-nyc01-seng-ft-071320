@@ -133,9 +133,9 @@ def num_points_scored(target)
   stats = game_hash
   result = nil
   stats.each do |key1, value1|
-    stats[key1].each do |key2, value2|
-      if stats[key1][key2][:player_name] == target
-        result = stats[key1][key2][:points]
+    stats[key1]['players'].each do |key2,value2|
+      if stats[key1]['players']['player_name'] == target
+        result = stats[key1]['players']['points']
       end
     end
   end
