@@ -127,3 +127,12 @@ def game_hash
 end
 
 # Write code here
+
+def num_points_scored(player_name)
+  game_hash.each do |key1, value1|
+    game_hash[key1].each do |key2, value2|
+      if game_hash[key1][player_name] == player_name
+        game_hash[key1][score]
+      end
+  end
+end
