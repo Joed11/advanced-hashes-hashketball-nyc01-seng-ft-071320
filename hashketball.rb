@@ -172,3 +172,16 @@ def team_names
   end
   result
 end
+
+def player_numbers(team)
+  stats = game_hash
+  result = []
+  stats.each do |key1, value1|
+    if stats[key1][:team_name] == team
+      stats[key1][:players].length.times do |index|
+        result.push(stats[key1][:players][index][:number])
+      end
+    end
+  end
+  result
+end
